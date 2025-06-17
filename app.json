@@ -1,3 +1,4 @@
+
 {
   "name": "ᴀɴɪᴇ x ᴇɪᴄᴀ ᴍᴜꜱɪᴄ ʙᴏᴛ",
   "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
@@ -14,27 +15,27 @@
   "env": {
     "API_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "6435225",
+      "value": "22250152",
       "required": true
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "4e984ea35f854762dcde906dce426c2d",
+      "value": "d071b95a90a941c3d2af8a27e3e52d12",
       "required": true
     },
     "BOT_TOKEN": {
       "description": "A Bot's token from Botfather",
-      "value": "",
+      "value": "7979900579:AAFqBNSz_nOxXtyDcObsI8kUS56jMSdxrio",
       "required": true
     },
     "MONGO_DB_URI": {
       "description": "Get a mongodb url from https://cloud.mongodb.com.",
-      "value": "",
+      "value": "mongodb+srv://musicbotxd:musicbotxd@cluster0.6thyk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
       "required": true
     },
     "OWNER_ID": {
       "description": "The user id of user whom you would like to add as OWNER.from @Sophia_x_MusicBot on Telegram.",
-      "value": "6914652926",
+      "value": "6018803920",
       "required": true
     },
    "SUPPORT_CHANNEL": {
@@ -49,7 +50,7 @@
     },
     "STRING_SESSION": {
       "description": "A Pyrogram String Session from @Sessoin_String_gen_BOT on Telegram.",
-      "value": "",
+      "value": "BQFTgqgABqazjJ0_eeS5KZdIZ_7Vs8MzF7VyI_AIaZYibanI81sz-WynIMnsGrnFtfcY3ySZ-lib9agBMi3UD5xLliKu4rxwqAITDSnDsRZroG-B33lmogaPU9q8VpFXkjAr8Lq__f3YiFxTnW02GZ7TAHFtbuCEm0bg55iWLzlZt_LnptjD5TlRAr0_syLuj-kdBFIht_31sX4ayjFfXPAU7Gb2RuXhAqA1o-CsWKlSYYSMvnNObL8bRM4AlHyMAASqsO7kLvHyinzjNq4sejHAKmjhgJ5jnXtqZfhOL_LKMUyVLjAyASXAIMxC9cZF2BOpyipeZ0dHCUYqeP6vfkbdvcmfFwAAAAHUsVFIAA",
       "required": true
     },
     "HEROKU_API_KEY": {
