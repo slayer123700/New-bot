@@ -64,7 +64,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "If you dont know this, Leave as it is",
-      "value": "https://github.com/Shivmis/Super2",
+      "value": "https://github.com/riteshxcoder/New-bot",
       "required": false
     },
     "UPSTREAM_BRANCH": {
