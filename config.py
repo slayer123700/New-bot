@@ -10,7 +10,7 @@ load_dotenv()
 API_ID = int(getenv("API_ID", "22250152"))
 API_HASH = getenv("API_HASH", "d071b95a90a941c3d2af8a27e3e52d12")
 BOT_PRIVACY = getenv("BOT_PRIVACY", "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
-BOT_TOKEN = getenv("BOT_TOKEN", "7979900579:AAFjZhCcufz7ZOC-PeWoNn-cYs0ouR1ztko")
+BOT_TOKEN = getenv("BOT_TOKEN", "7979900579:AAFQBE54bCFSvLH2s8XLBG9qvflGD85Ol2A")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://musicbotxd:musicbotxd@cluster0.6thyk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
