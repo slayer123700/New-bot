@@ -1,26 +1,19 @@
-from AnieXEricaMusic.core.bot import AMBOT
-from AnieXEricaMusic.core.dir import dirr
-from AnieXEricaMusic.core.git import git
-from AnieXEricaMusic.core.userbot import Userbot
-from AnieXEricaMusic.misc import dbb, heroku
-
-from .logging import LOGGER
-
-dirr()
-git()
-dbb()
-heroku()
-
-app = AMBOT()
-userbot = Userbot()
+import glob
+from os.path import dirname, isfile
 
 
-from .platforms import *
+def __list_all_modules():
+    work_dir = dirname(__file__)
+    mod_paths = glob.glob(work_dir + "/*/*.py")
 
-Apple = AppleAPI()
-Carbon = CarbonAPI()
-SoundCloud = SoundAPI()
-Spotify = SpotifyAPI()
-Resso = RessoAPI()
-Telegram = TeleAPI()
-YouTube = YouTubeAPI()
+    all_modules = [
+        (((f.replace(work_dir, "")).replace("/", "."))[:-3])
+        for f in mod_paths
+        if isfile(f) and f.endswith(".py") and not f.endswith("__init__.py")
+    ]
+
+    return all_modules
+
+
+ALL_MODULES = sorted(__list_all_modules())
+__all__ = ALL_MODULES + ["ALL_MODULES"]
