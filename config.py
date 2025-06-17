@@ -1,3 +1,4 @@
+
 import re
 from os import getenv
 
@@ -6,20 +7,24 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "6435225"))
-API_HASH = getenv("API_HASH", "4e984ea35f854762dcde906dce426c2d")
+API_ID = int(getenv("API_ID", "22250152"))
+API_HASH = getenv("API_HASH", "d071b95a90a941c3d2af8a27e3e52d12")
 BOT_PRIVACY = getenv("BOT_PRIVACY", "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "7979900579:AAFqBNSz_nOxXtyDcObsI8kUS56jMSdxrio")
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://musicbotxd:musicbotxd@cluster0.6thyk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600))
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID",-1002354552656))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID",-1002392274240))
 
-OWNER_ID = int(getenv("OWNER_ID", 8056154987))
+LOG_GROUP = int(getenv("LOG_GROUP",-1002392274240))
 
-OWNER = int(getenv("OWNER", 8056154987))
+APPROVAL_GROUP = int(getenv("APPROVAL_GROUP",-1002392274240))
+
+OWNER_ID = int(getenv("OWNER_ID", 6018803920))
+
+OWNER = int(getenv("OWNER", 6018803920))
 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
@@ -42,7 +47,7 @@ PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 5242880000))
 TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 5242880000))
 
-STRING1 = getenv("STRING_SESSION", None)
+STRING1 = getenv("STRING_SESSION","BQFTgqgABqazjJ0_eeS5KZdIZ_7Vs8MzF7VyI_AIaZYibanI81sz-WynIMnsGrnFtfcY3ySZ-lib9agBMi3UD5xLliKu4rxwqAITDSnDsRZroG-B33lmogaPU9q8VpFXkjAr8Lq__f3YiFxTnW02GZ7TAHFtbuCEm0bg55iWLzlZt_LnptjD5TlRAr0_syLuj-kdBFIht_31sX4ayjFfXPAU7Gb2RuXhAqA1o-CsWKlSYYSMvnNObL8bRM4AlHyMAASqsO7kLvHyinzjNq4sejHAKmjhgJ5jnXtqZfhOL_LKMUyVLjAyASXAIMxC9cZF2BOpyipeZ0dHCUYqeP6vfkbdvcmfFwAAAAHUsVFIAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
