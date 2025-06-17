@@ -18,7 +18,7 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600))
 
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID",-1002392274240))
 
-BOT_USERNAME = getenv("BOT_USERNAME", "@Shigaraki_probot")
+BOT_USERNAME = getenv("BOT_USERNAME", "Shigaraki_probot")
 BOT_NAME = getenv("BOT_NAME", "sʜɪɢᴀʀᴀkɪ ᴛᴏᴍᴜʀᴀ")
 
 LOG_GROUP = getenv("LOG_GROUP",-1002392274240)
