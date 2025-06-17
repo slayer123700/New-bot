@@ -7,7 +7,7 @@ from pyrogram import filters
 import config
 from AnieXEricaMusic.core.mongo import mongodb
 
-from AnieXEricaMusic.logging import LOGGER  # ✅ FIXED
+from .logging import LOGGER
 
 SUDOERS = filters.user()
 
