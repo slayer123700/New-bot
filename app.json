@@ -40,12 +40,12 @@
     },
    "SUPPORT_CHANNEL": {
       "description": "Add channel link",
-      "value": "https://t.me/shivang_xd",
+      "value": "https://t.me/MBT_SLAYER",
       "required": true
     },
       "SUPPORT_CHAT": {
       "description": "Add Chat group & support group Link",
-      "value": "https://t.me/riteshcoder",
+      "value": "https://t.me/+jsCexG6NFnE1YTY1",
       "required": true
     },
     "STRING_SESSION": {
