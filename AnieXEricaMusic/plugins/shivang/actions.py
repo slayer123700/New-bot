@@ -37,15 +37,15 @@ from AnieXEricaMusic.utils.permissions import extract_user_and_reason, mention, 
 _DEF_MUTE_PERMS = ChatPermissions()
 
 _USAGES = {
-    "ban":    "/ban @user [reason] — or reply with /ban [reason]",
-    "unban":  "/unban @user [reason] — or reply with /unban [reason]",
-    "mute":   "/mute @user [reason] — or reply with /mute [reason]",
-    "unmute": "/unmute @user [reason] — or reply with /unmute [reason]",
-    "tmute":  "/tmute @user <time> [reason] — or reply with /tmute <time> [reason]",
-    "kick":   "/kick @user [reason] — or reply with /kick [reason]",
+    "ban":    "/ban  — or reply with /ban [reason]",
+    "unban":  "/unban  — or reply with /unban [reason]",
+    "mute":   "/mute — or reply with /mute [reason]",
+    "unmute": "/unmute  — or reply with /unmute [reason]",
+    "tmute":  "/tmute  <time> [reason] — or reply with /tmute <time> [reason]",
+    "kick":   "/kick  [reason] — or reply with /kick [reason]",
     "dban":   "Reply to a user's message with /dban [reason]",
-    "sban":   "/sban @user — or reply with /sban",
-    "tban":   "/tban @user <time> [reason] — or reply with /tban <time> [reason]",
+    "sban":   "/sban  — or reply with /sban",
+    "tban":   "/tban <time> [reason] — or reply with /tban <time> [reason]",
     "kickme": "/kickme — kick yourself from the group",
 }
 
