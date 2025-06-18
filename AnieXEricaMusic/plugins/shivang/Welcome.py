@@ -13,22 +13,12 @@ from AnieXEricaMusic import app
 # ─────────────────────────────
 # CONFIG
 # ─────────────────────────────
-BG_PATH      = "AnieXEricaMusic/assets/annie/AnnieNwel.png"
-FALLBACK_PIC = "AnieXEricaMusic/assets/upic.png"
 FONT_PATH    = "AnieXEricaMusic/assets/annie/ArialReg.ttf"
 BTN_VIEW     = "๏ ᴠɪᴇᴡ ɴᴇᴡ ᴍᴇᴍʙᴇʀ ๏"
 BTN_ADD      = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
 
 CAPTION_TXT = """
-┏━━━━━━━━━━━━━━◤◢━━━━━━━━━━━━━
-{chat_title}
-⬔━━━━━━━━━━━━━━━━━━━━━━━━━━━━⬕
-┣➤ Nᴀᴍᴇ ✧ {mention}
-┣➤ Iᴅ ✧ `{uid}`
-┣➤ Usᴇʀɴᴀᴍᴇ ✧ @{uname}
-┣➤ Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs ✧ {count}
-⬔━━━━━━━━━━━━━━━━━━━━━━━━━━━━⬕
-┗━━━━━━━━━━━━━━◤◢━━━━━━━━━━━━━━
+ʜᴇʏ {mention}  ᴡᴇʟᴄᴏᴍᴇ {chat_title} ᴛᴏ ʜᴏᴘᴇ ʏᴏᴜ ᴡɪʟʟ ʜᴀᴅ ᴀ ɢᴏᴏᴅ ᴅᴀʏ 🥺🙂
 """
 
 JOIN_THRESHOLD = 10
@@ -72,28 +62,7 @@ class _WelDB:
 db = _WelDB()
 last_messages: dict[int, list] = {}
 
-# ─────────────────────────────
-# IMAGE UTILS
-# ─────────────────────────────
-def _circle(im, size=(835, 839)):
-    im = im.resize(size, Image.LANCZOS).convert("RGBA")
-    mask = Image.new("L", size, 0)
-    ImageDraw.Draw(mask).ellipse((0, 0, *size), fill=255)
-    im.putalpha(mask)
-    return im
 
-def build_pic(av, fn, uid, un):
-    bg = Image.open(BG_PATH).convert("RGBA")
-    avatar = _circle(Image.open(av))
-    bg.paste(avatar, (1887, 390), avatar)
-    draw = ImageDraw.Draw(bg)
-    font = ImageFont.truetype(FONT_PATH, 65)
-    draw.text((421, 715), fn, fill=(242, 242, 242), font=font)
-    draw.text((270, 1005), str(uid), fill=(242, 242, 242), font=font)
-    draw.text((570, 1308), un, fill=(242, 242, 242), font=font)
-    path = f"downloads/welcome_{uid}.png"
-    bg.save(path)
-    return path
 
 # ─────────────────────────────
 # TOGGLE COMMAND
