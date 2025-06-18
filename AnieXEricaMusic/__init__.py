@@ -24,3 +24,6 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
+#watchers
+
+JOIN_UPDATE_GROUP = 70
