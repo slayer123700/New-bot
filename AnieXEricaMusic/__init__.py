@@ -6,17 +6,24 @@ from AnieXEricaMusic.misc import dbb, heroku
 
 from .logging import LOGGER
 
+# Optional APIs
+from .platforms import *
+
+# Extra Exports
+from .utils.cache import admin_cache
+from .mongo.filters import filter_collection
+
+# Initialize Core Functions
 dirr()
 git()
 dbb()
 heroku()
 
+# Initialize Bots
 app = AMBOT()
 userbot = Userbot()
 
-
-from .platforms import *
-
+# Initialize APIs
 Apple = AppleAPI()
 Carbon = CarbonAPI()
 SoundCloud = SoundAPI()
@@ -24,8 +31,8 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
-#watchers
 
+# Constants
 JOIN_UPDATE_GROUP = 70
-parse_mode="Markdown"
 FILTERS_GROUP = 70
+parse_mode = "Markdown"
