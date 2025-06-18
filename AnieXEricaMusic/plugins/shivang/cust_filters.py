@@ -4,10 +4,10 @@ from AnieXEricaMusic.mongo.filterdb import remove_filter, get_filters, filter_co
 from AnieXEricaMusic import app , FILTERS_GROUP
 import re
 from pyrogram.enums import ParseMode
-from AnieXEricaMusic.decorator.chatadmin import chatadmin , chatowner
+from AnieXEricaMusic.chatadmin import chatadmin , chatowner
 from config import config
-from AnieXEricaMusic.decorator.save import save 
-from AnieXEricaMusic.utils.decorator.errors import error
+from AnieXEricaMusic.save import save 
+from AnieXEricaMusic.errors import error
 
 
 # /filter command
