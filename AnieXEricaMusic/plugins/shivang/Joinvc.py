@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 async def video_chat_started(client, message: Message):
     chat = message.chat
     await message.reply(
-        f"Vᴏɪᴄᴇ Cʜᴀᴛ ʜᴀs Sᴛᴀʀᴛ Jᴏɪɴ ᴛʜᴇᴍ ᴡʜɪʟᴇ Mᴀɴsʀɪʙᴀᴛɪɴɢ 🥵👻"
+        f"Vᴏɪᴄᴇ Cʜᴀᴛ ʜᴀs Sᴛᴀʀᴛᴇᴅ Jᴏɪɴ ᴛʜᴇᴍ ᴡʜɪʟᴇ Mᴀɴsʀɪʙᴀᴛɪɴɢ 🥵👻"
     )
 
 @app.on_message(filters.video_chat_ended)
