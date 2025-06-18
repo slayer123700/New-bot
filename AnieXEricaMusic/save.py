@@ -1,5 +1,5 @@
 
-from Yumeko.database.total_user_chat_db import is_user_in_db, is_chat_in_db, save_chat, save_user
+from AnieXEricaMusic.mongo.total_user_chat_db import is_user_in_db, is_chat_in_db, save_chat, save_user
 from functools import wraps
 from pyrogram.types import Message, CallbackQuery
 from typing import Callable
