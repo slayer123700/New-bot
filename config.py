@@ -16,6 +16,8 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://musicbotxd:musicbotxd@clust
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600))
 
+DEEP_API = getenv("DEEP_API") #optional
+
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID",-1002392274240))
 
 BOT_USERNAME = getenv("BOT_USERNAME", "Shigaraki_probot")
