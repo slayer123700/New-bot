@@ -10,15 +10,23 @@ from AnieXEricaMusic.utils.admin_filters import admin_filter
 spam_chats = set()
 
 
+def escape_markdown(text: str) -> str:
+    escape_chars = r'\_*[]()~`>#+-=|{}.!'
+    for char in escape_chars:
+        text = text.replace(char, f"\\{char}")
+    return text
+
+
 @app.on_message(filters.command(["utag", "all", "mention"]) & filters.group & admin_filter)
 async def tag_all_users(client: Client, message: Message):
     replied = message.reply_to_message
-    text = message.text.split(None, 1)[1] if len(message.command) > 1 else ""
+    raw_text = message.text.split(None, 1)[1] if len(message.command) > 1 else ""
+    text = escape_markdown(raw_text)
 
     if not replied and not text:
         return await message.reply(
-            "**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ.**",
-            parse_mode="markdown"
+            "*Reply to a message or provide text to tag all users\\.*",
+            parse_mode="MarkdownV2"
         )
 
     spam_chats.add(message.chat.id)
@@ -34,82 +42,83 @@ async def tag_all_users(client: Client, message: Message):
 
             usernum += 1
             total_tagged += 1
-            usertxt += f"⊚ [{member.user.first_name}](tg://user?id={member.user.id})\n"
+            name = escape_markdown(member.user.first_name)
+            usertxt += f"⊚ [{name}](tg://user?id={member.user.id})\n"
 
             if usernum == 5:
                 try:
                     if replied:
                         await replied.reply_text(
-                            f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
-                            parse_mode="markdown"
+                            f"{text}\n{usertxt}\n📢 *Tagging {total_tagged} users done\\.*",
+                            parse_mode="MarkdownV2"
                         )
                     else:
                         await message.reply_text(
-                            f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
-                            parse_mode="markdown"
+                            f"{text}\n{usertxt}\n📢 *Tagging {total_tagged} users done\\.*",
+                            parse_mode="MarkdownV2"
                         )
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
                 except Exception:
                     pass
 
-                await asyncio.sleep(3)
+                await asyncio.sleep(2)
                 usernum, usertxt = 0, ""
 
         if usertxt:
             try:
                 if replied:
                     await replied.reply_text(
-                        f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
-                        parse_mode="markdown"
+                        f"{text}\n{usertxt}\n📢 *Tagging {total_tagged} users done\\.*",
+                        parse_mode="MarkdownV2"
                     )
                 else:
                     await message.reply_text(
-                        f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
-                        parse_mode="markdown"
+                        f"{text}\n{usertxt}\n📢 *Tagging {total_tagged} users done\\.*",
+                        parse_mode="MarkdownV2"
                     )
             except Exception:
                 pass
 
         await message.reply(
-            f"✅ **ᴛᴀɢɢɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ. ᴛᴏᴛᴀʟ:** `{total_tagged}` **ᴜsᴇʀs.**",
-            parse_mode="markdown"
+            f"✅ *Tagging completed\\. Total:* `{total_tagged}` *users\\.*",
+            parse_mode="MarkdownV2"
         )
 
     finally:
         spam_chats.discard(message.chat.id)
 
 
-@app.on_message(filters.command(["cancel", "ustop"]))
+@app.on_message(filters.command(["cancel", "ustop"]) & filters.group)
 async def cancel_spam(client: Client, message: Message):
     chat_id = message.chat.id
 
     if chat_id not in spam_chats:
         return await message.reply(
-            "**ɪ'ᴍ ɴᴏᴛ ᴛᴀɢɢɪɴɢ ᴀɴʏᴏɴᴇ ʀɪɢʜᴛ ɴᴏᴡ.**",
-            parse_mode="markdown"
+            "*I’m not tagging anyone right now\\.*",
+            parse_mode="MarkdownV2"
         )
 
     try:
         member = await client.get_chat_member(chat_id, message.from_user.id)
         if member.status not in (ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER):
             return await message.reply(
-                "**ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴄᴀɴᴄᴇʟ ᴛᴀɢɢɪɴɢ.**",
-                parse_mode="markdown"
+                "*Only admins can cancel tagging\\.*",
+                parse_mode="MarkdownV2"
             )
     except UserNotParticipant:
         return await message.reply(
-            "**ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ ᴏғ ᴛʜɪs ᴄʜᴀᴛ.**",
-            parse_mode="markdown"
+            "*You are not a participant of this chat\\.*",
+            parse_mode="MarkdownV2"
         )
     except Exception:
         return await message.reply(
-            "**ᴇʀʀᴏʀ ᴄʜᴇᴄᴋɪɴɢ ᴀᴅᴍɪɴ sᴛᴀᴛᴜs.**",
-            parse_mode="markdown"
+            "*Error checking admin status\\.*",
+            parse_mode="MarkdownV2"
         )
 
     spam_chats.discard(chat_id)
     return await message.reply(
-        "**🚫 ᴛᴀɢɢɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**",
-        parse_mode="markdown"
+        "🚫 *Tagging cancelled successfully\\.*",
+        parse_mode="MarkdownV2"
     )
