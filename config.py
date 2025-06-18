@@ -33,6 +33,8 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY","HK543fklqxgt66hvxf")
 
+DEEP_API = getenv("DEEP_API") #optional 
+
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/riteshxcoder/New-bot",
