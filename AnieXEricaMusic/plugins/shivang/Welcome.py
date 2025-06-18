@@ -18,7 +18,7 @@ BTN_VIEW     = "๏ ᴠɪᴇᴡ ɴᴇᴡ ᴍᴇᴍʙᴇʀ ๏"
 BTN_ADD      = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
 
 CAPTION_TXT = """
-ʜᴇʏ {mention}  ᴡᴇʟᴄᴏᴍᴇ {chat_title} ᴛᴏ ʜᴏᴘᴇ ʏᴏᴜ ᴡɪʟʟ ʜᴀᴅ ᴀ ɢᴏᴏᴅ ᴅᴀʏ 🥺🙂
+ʜᴇʏ ᴡᴇʟᴄᴏᴍᴇ To {chat_title} ᴛᴏ ʜᴏᴘᴇ ʏᴏᴜ ᴡɪʟʟ ʜᴀᴅ ᴀ ɢᴏᴏᴅ ᴅᴀʏ 🥺🙂
 """
 
 JOIN_THRESHOLD = 10
