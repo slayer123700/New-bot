@@ -16,7 +16,10 @@ async def tag_all_users(client: Client, message: Message):
     text = message.text.split(None, 1)[1] if len(message.command) > 1 else ""
 
     if not replied and not text:
-        return await message.reply("**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ.**")
+        return await message.reply(
+            "**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ.**",
+            parse_mode="Markdown"
+        )
 
     spam_chats.add(message.chat.id)
     usernum, usertxt, total_tagged = 0, "", 0
@@ -36,9 +39,15 @@ async def tag_all_users(client: Client, message: Message):
             if usernum == 5:
                 try:
                     if replied:
-                        await replied.reply_text(f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...")
+                        await replied.reply_text(
+                            f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
+                            parse_mode="Markdown"
+                        )
                     else:
-                        await message.reply_text(f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...")
+                        await message.reply_text(
+                            f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
+                            parse_mode="Markdown"
+                        )
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
                 except Exception:
@@ -50,13 +59,22 @@ async def tag_all_users(client: Client, message: Message):
         if usertxt:
             try:
                 if replied:
-                    await replied.reply_text(f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...")
+                    await replied.reply_text(
+                        f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
+                        parse_mode="Markdown"
+                    )
                 else:
-                    await message.reply_text(f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...")
+                    await message.reply_text(
+                        f"{text}\n{usertxt}\n📢 ᴛᴀɢɢɪɴɢ {total_tagged} ᴜsᴇʀs ᴅᴏɴᴇ...",
+                        parse_mode="Markdown"
+                    )
             except Exception:
                 pass
 
-        await message.reply(f"✅ **ᴛᴀɢɢɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ. ᴛᴏᴛᴀʟ:** `{total_tagged}` **ᴜsᴇʀs.**")
+        await message.reply(
+            f"✅ **ᴛᴀɢɢɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ. ᴛᴏᴛᴀʟ:** `{total_tagged}` **ᴜsᴇʀs.**",
+            parse_mode="Markdown"
+        )
 
     finally:
         spam_chats.discard(message.chat.id)
@@ -67,16 +85,31 @@ async def cancel_spam(client: Client, message: Message):
     chat_id = message.chat.id
 
     if chat_id not in spam_chats:
-        return await message.reply("**ɪ'ᴍ ɴᴏᴛ ᴛᴀɢɢɪɴɢ ᴀɴʏᴏɴᴇ ʀɪɢʜᴛ ɴᴏᴡ.**")
+        return await message.reply(
+            "**ɪ'ᴍ ɴᴏᴛ ᴛᴀɢɢɪɴɢ ᴀɴʏᴏɴᴇ ʀɪɢʜᴛ ɴᴏᴡ.**",
+            parse_mode="Markdown"
+        )
 
     try:
         member = await client.get_chat_member(chat_id, message.from_user.id)
         if member.status not in (ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER):
-            return await message.reply("**ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴄᴀɴᴄᴇʟ ᴛᴀɢɢɪɴɢ.**")
+            return await message.reply(
+                "**ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴄᴀɴᴄᴇʟ ᴛᴀɢɢɪɴɢ.**",
+                parse_mode="Markdown"
+            )
     except UserNotParticipant:
-        return await message.reply("**ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ ᴏғ ᴛʜɪs ᴄʜᴀᴛ.**")
+        return await message.reply(
+            "**ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ ᴏғ ᴛʜɪs ᴄʜᴀᴛ.**",
+            parse_mode="Markdown"
+        )
     except Exception:
-        return await message.reply("**ᴇʀʀᴏʀ ᴄʜᴇᴄᴋɪɴɢ ᴀᴅᴍɪɴ sᴛᴀᴛᴜs.**")
+        return await message.reply(
+            "**ᴇʀʀᴏʀ ᴄʜᴇᴄᴋɪɴɢ ᴀᴅᴍɪɴ sᴛᴀᴛᴜs.**",
+            parse_mode="Markdown"
+        )
 
     spam_chats.discard(chat_id)
-    return await message.reply("**🚫 ᴛᴀɢɢɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**")
+    return await message.reply(
+        "**🚫 ᴛᴀɢɢɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**",
+        parse_mode="Markdown"
+    )
