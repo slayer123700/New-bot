@@ -7,7 +7,7 @@ from pyrogram.enums import ParseMode
 from AnieXEricaMusic.decorator.chatadmin import chatadmin , chatowner
 from config import config
 from AnieXEricaMusic.decorator.save import save 
-from AnieXEricaMusic.decorator.errors import error
+from AnieXEricaMusic.utils.decorator.errors import error
 
 
 # /filter command
