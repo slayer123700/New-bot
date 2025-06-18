@@ -12,7 +12,7 @@ async def join_request_handler(c: Client, j: ChatJoinRequest):
     userr = j.from_user
     chat = j.chat.id
 
-    txt = "New join request is available\n**USER's INFO**\n"
+    txt = "ɴᴇᴡ ᴊᴏɪɴ ʀᴇǫᴜᴇsᴛ 👀\n 𝐔𝐒𝐄𝐑 𝐈𝐍𝐅𝐎 \n"
     txt += f"Name: {userr.full_name}\n"
     txt += f"Mention: {userr.mention}\n"
     txt += f"Id: {user}\n"
