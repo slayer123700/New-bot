@@ -39,6 +39,4 @@ JOIN_UPDATE_GROUP = 70
 FILTERS_GROUP = 70
 parse_mode = "Markdown"
 
-# Export cache and filter modules
-from AnieXEricaMusic.utils.cache import admin_cache
-from AnieXEricaMusic.mongo.filters import filter_collection
+
