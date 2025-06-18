@@ -33,7 +33,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY","HK543fklqxgt66hvxf")
 
-DEEP_API = getenv("DEEP_API") #optional 
+DEEP_API = getenv("9e34227f-73df-4f6d-ac59-20a48904b1db") #optional 
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
