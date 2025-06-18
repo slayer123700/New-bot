@@ -1,7 +1,7 @@
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from AnieXEricaMusic.utils.fonts import Fonts
+from AnieXEricaMusic.utils.font import Fonts
 from AnieXEricaMusic import app
 from AnieXEricaMusic import app as pbot
 
