@@ -3,7 +3,7 @@ from pyrogram.enums import ChatMemberStatus as CMS
 from pyrogram.types import CallbackQuery, ChatJoinRequest
 from pyrogram.types import InlineKeyboardButton as ikb
 from pyrogram.types import InlineKeyboardMarkup as ikm
-from AnieXEricaMusic import app , JOIN_UPDATE_GROUP
+from AnieXEricaMusic import app 
 
 
 @app.on_chat_join_request(group=JOIN_UPDATE_GROUP)
