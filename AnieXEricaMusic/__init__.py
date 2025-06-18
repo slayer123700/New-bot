@@ -10,8 +10,8 @@ from .logging import LOGGER
 from .platforms import *
 
 # Extra Exports
-from .utils.cache import admin_cache
-from .mongo.filters import filter_collection
+from AnieXEricaMusic.utils.cache import admin_cache
+from AnieXEricaMusic.mongo.dbfilter import filter_collection
 
 # Initialize Core Functions
 dirr()
