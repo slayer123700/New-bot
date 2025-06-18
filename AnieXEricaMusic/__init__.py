@@ -28,4 +28,4 @@ YouTube = YouTubeAPI()
 
 JOIN_UPDATE_GROUP = 70
 parse_mode="Markdown"
-FILTER_GROUP = 70
+FILTERS_GROUP = 70
