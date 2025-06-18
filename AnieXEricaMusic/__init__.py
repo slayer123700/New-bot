@@ -27,4 +27,5 @@ YouTube = YouTubeAPI()
 #watchers
 
 JOIN_UPDATE_GROUP = 70
-parse_mode="Markdown" 
+parse_mode="MarkdownV2"
+
