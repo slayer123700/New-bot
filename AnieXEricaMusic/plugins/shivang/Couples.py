@@ -67,7 +67,7 @@ async def couples_handler(_, message: Message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply("**ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs.**")
 
-    wait = await message.reply("🦋")
+    wait = await message.reply("💓")
     cid  = message.chat.id
     date = today()
 
