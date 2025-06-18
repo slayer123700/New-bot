@@ -6,7 +6,6 @@ from pyrogram.types import InlineKeyboardMarkup as ikm
 from AnieXEricaMusic import app 
 
 
-@app.on_chat_join_request(group=JOIN_UPDATE_GROUP)
 async def join_request_handler(c: Client, j: ChatJoinRequest):
     user = j.from_user.id
     userr = j.from_user
