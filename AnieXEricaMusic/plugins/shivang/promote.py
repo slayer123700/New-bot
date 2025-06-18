@@ -66,10 +66,10 @@ _DEMOTE_PRIVS = ChatPrivileges(
 # Usage strings
 # ────────────────────────────────────────────────────────────
 _USAGES = {
-    "promote":     "/promote @user [title] — or reply with /promote [title]",
-    "fullpromote": "/fullpromote @user [title] — or reply with /fullpromote [title]",
-    "demote":      "/demote @user — or reply with /demote",
-    "tempadmin":   "/tempadmin @user <time> [title] — or reply with /tempadmin <time> [title]",
+    "promote":     "𝖴𝗇𝖺𝖻𝗅𝖾 𝗍𝗈 𝖿𝗂𝗇𝖽 𝗍𝗁𝖾 𝗌𝗉𝖾𝖼𝗂𝖿𝗂𝖾𝖽 𝗎𝗌𝖾𝗋. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗆𝖺𝗄𝖾 𝗌𝗎𝗋𝖾 𝗍𝗁𝖾 𝗎𝗌𝖾𝗋𝗇𝖺𝗆𝖾/𝗂𝖽 𝗂𝗌 𝗏𝖺𝗅𝗂𝖽 𝗈𝗋 𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝗌𝗌𝖺𝗀𝖾.",
+    "fullpromote": "𝖴𝗇𝖺𝖻𝗅𝖾 𝗍𝗈 𝖿𝗂𝗇𝖽 𝗍𝗁𝖾 𝗌𝗉𝖾𝖼𝗂𝖿𝗂𝖾𝖽 𝗎𝗌𝖾𝗋. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗆𝖺𝗄𝖾 𝗌𝗎𝗋𝖾 𝗍𝗁𝖾 𝗎𝗌𝖾𝗋𝗇𝖺𝗆𝖾/𝗂𝖽 𝗂𝗌 𝗏𝖺𝗅𝗂𝖽 𝗈𝗋 𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝗌𝗌𝖺𝗀𝖾.",
+    "demote":      "𝖴𝗇𝖺𝖻𝗅𝖾 𝗍𝗈 𝖿𝗂𝗇𝖽 𝗍𝗁𝖾 𝗌𝗉𝖾𝖼𝗂𝖿𝗂𝖾𝖽 𝗎𝗌𝖾𝗋. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗆𝖺𝗄𝖾 𝗌𝗎𝗋𝖾 𝗍𝗁𝖾 𝗎𝗌𝖾𝗋𝗇𝖺𝗆𝖾/𝗂𝖽 𝗂𝗌 𝗏𝖺𝗅𝗂𝖽 𝗈𝗋 𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝗌𝗌𝖺𝗀𝖾.",
+    "tempadmin":   "𝖴𝗇𝖺𝖻𝗅𝖾 𝗍𝗈 𝖿𝗂𝗇𝖽 𝗍𝗁𝖾 𝗌𝗉𝖾𝖼𝗂𝖿𝗂𝖾𝖽 𝗎𝗌𝖾𝗋. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗆𝖺𝗄𝖾 𝗌𝗎𝗋𝖾 𝗍𝗁𝖾 𝗎𝗌𝖾𝗋𝗇𝖺𝗆𝖾/𝗂𝖽 𝗂𝗌 𝗏𝖺𝗅𝗂𝖽 𝗈𝗋 𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝗌𝗌𝖺𝗀𝖾.",
 }
 
 def _usage(cmd: str) -> str:
@@ -121,7 +121,7 @@ async def promote_command(client, message: Message):
                 title = "⚠️ Couldn’t set custom title (not a supergroup)"
         await message.reply_text(_format_success("Promoted", message, uid, name, title))
     except ChatAdminRequired:
-        await message.reply_text("I need promote permissions.")
+        await message.reply_text("ɪ ᴀᴍ ʜᴇʀᴇ ᴊᴜsᴛ ғᴏʀ ᴅɪɢɪᴛɪʟ ᴍᴀɴsᴛʀɪʙᴀᴛɪᴏɴ 🤧")
     except UserAdminInvalid:
         await message.reply_text("I cannot promote that user.")
 
@@ -155,7 +155,7 @@ async def fullpromote_command(client, message: Message):
                 title = "⚠️ Couldn’t set custom title (not a supergroup)"
         await message.reply_text(_format_success("Fully promoted", message, uid, name, title))
     except ChatAdminRequired:
-        await message.reply_text("I need promote permissions.")
+        await message.reply_text("ɪ ᴀᴍ ʜᴇʀᴇ ᴊᴜsᴛ ғᴏʀ ᴅɪɢɪᴛɪʟ ᴍᴀɴsᴛʀɪʙᴀᴛɪᴏɴ 🤧")
     except UserAdminInvalid:
         await message.reply_text("I cannot promote that user.")
 
@@ -184,7 +184,7 @@ async def demote_command(client, message: Message):
         )
         await message.reply_text(_format_success("Demoted", message, uid, name))
     except ChatAdminRequired:
-        await message.reply_text("I need promote permissions.")
+        await message.reply_text("ɪ ᴀᴍ ʜᴇʀᴇ ᴊᴜsᴛ ғᴏʀ ᴅɪɢɪᴛɪʟ ᴍᴀɴsᴛʀɪʙᴀᴛɪᴏɴ 🤧")
     except UserAdminInvalid:
         await message.reply_text("I cannot demote that user.")
 
@@ -231,7 +231,7 @@ async def tempadmin_command(client, message: Message):
                 title = "⚠️ Couldn’t set custom title (not a supergroup)"
         await message.reply_text(_format_success(f"Temp‑promoted for {time_arg}", message, uid, name, title))
     except ChatAdminRequired:
-        return await message.reply_text("I need promote permissions.")
+        return await message.reply_text("ɪ ᴀᴍ ʜᴇʀᴇ ᴊᴜsᴛ ғᴏʀ ᴅɪɢɪᴛɪʟ ᴍᴀɴsᴛʀɪʙᴀᴛɪᴏɴ 🤧")
     except UserAdminInvalid:
         return await message.reply_text("I cannot promote that user.")
 
