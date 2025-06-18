@@ -6,7 +6,6 @@ from pyrogram.errors import UserNotParticipant, FloodWait
 from pyrogram.types import Message
 
 from AnieXEricaMusic import app
-from AnieXEricaMusic.utils.admin_filters import admin_filter
 
 spam_chats = set()
 
