@@ -3,9 +3,10 @@ from pyrogram.enums import ChatMemberStatus as CMS
 from pyrogram.types import CallbackQuery, ChatJoinRequest
 from pyrogram.types import InlineKeyboardButton as ikb
 from pyrogram.types import InlineKeyboardMarkup as ikm
-from AnieXEricaMusic import app 
+from AnieXEricaMusic import app , JOIN_UPDATE_GROUP
 
 
+@app.on_chat_join_request(group=JOIN_UPDATE_GROUP)
 async def join_request_handler(c: Client, j: ChatJoinRequest):
     user = j.from_user.id
     userr = j.from_user
