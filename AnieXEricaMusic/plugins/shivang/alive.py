@@ -3,7 +3,7 @@ import time
 import psutil 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , Message
-from config import config  
+from AnieXEricaMusic import config  
 from AnieXEricaMusic import app , start_time , start_time_str
 import pyrogram
 import telethon
