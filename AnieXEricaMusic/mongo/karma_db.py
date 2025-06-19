@@ -1,4 +1,4 @@
-from AnieXEricaMusic.mongo import karma_collection
+from AnieXEricaMusic.plugins.shivang.karma import karma_collection
 
 async def increase_karma(user_id: int, user_name: str, chat_id: int, points: int = 1):
     """Increase the karma points for a user in a specific chat."""
