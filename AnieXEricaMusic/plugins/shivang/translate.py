@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from AnieXEricaMusic import app
 from pyrogram.enums import ParseMode
-from AnieXEricaMusic import config
+import config
 from AnieXEricaMusic.save import save 
 from AnieXEricaMusic.errors import error
 
