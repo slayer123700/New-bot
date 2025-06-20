@@ -84,8 +84,7 @@ def _format_success(action: str, chat: Message, uid: int, name: str, title: Opti
     admin_m   = mention(chat.from_user.id, chat.from_user.first_name)
     text = (
         f"» {action} ᴀ ᴜsᴇʀ ɪɴ {chat_name}\n"
-        f" ᴜsᴇʀ  : {user_m}\n"
-        f" ᴀᴅᴍɪɴ : {admin_m}"
+
     )
     if title:
         text += f"\nTitle: {title}"
