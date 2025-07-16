@@ -39,7 +39,7 @@ DEEP_API = getenv("9e34227f-73df-4f6d-ac59-20a48904b1db") #optional
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/riteshxcoder/New-bot",
+    "https://github.com/slayer123700/New-bot",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
