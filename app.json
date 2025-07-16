@@ -65,7 +65,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "If you dont know this, Leave as it is",
-      "value": "https://github.com/riteshxcoder/New-bot",
+      "value": "https://github.com/slayer123700/New-bot",
       "required": false
     },
     "UPSTREAM_BRANCH": {
